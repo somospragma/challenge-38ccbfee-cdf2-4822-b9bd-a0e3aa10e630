@@ -1,0 +1,15 @@
+spring:
+  resilience4j:
+    circuitbreaker:
+      instances:
+        myCircuitBreaker:
+          registerHealthIndicator: true
+    retry:
+      instances:
+        myRetry:
+          maxAttempts: 3
+    bulkhead:
+      instances:
+        myBulkhead:
+          maxConcurrentCalls: 10
+          waitingTaskQueue: 100
